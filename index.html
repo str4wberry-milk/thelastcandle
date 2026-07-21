@@ -8,84 +8,156 @@
 
 <title>The Last Candle</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600&family=Patrick+Hand&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
+
 <body>
 
-<div id="screen">
 
-    <!-- Sky -->
-    <div id="sky"></div>
+<div id="title-screen">
 
-    <!-- Stars -->
-    <div id="stars"></div>
 
-    <!-- Fog -->
-    <div id="fog"></div>
+    <!-- SKY -->
 
-    <!-- Tree -->
-    <div id="tree">
+    <div class="sky">
 
-        <div class="trunk"></div>
 
-        <div class="canopy one"></div>
-        <div class="canopy two"></div>
-        <div class="canopy three"></div>
+        <div class="moon"></div>
 
-    </div>
 
-    <!-- Lantern -->
-    <div id="lantern">
-        <div class="light"></div>
-    </div>
+        <div class="stars">
 
-    <!-- Ground -->
-    <div id="ground">
+            <span>✦</span>
+            <span>✧</span>
+            <span>⋆</span>
+            <span>•</span>
+            <span>✦</span>
+            <span>✧</span>
 
-        <div class="hill"></div>
+        </div>
 
-        <div id="grass"></div>
-
-        <div id="flowers"></div>
 
     </div>
 
-    <!-- Title -->
-    <div id="menu">
+
+
+    <!-- ATMOSPHERE -->
+
+    <div class="mist"></div>
+
+
+
+    <!-- WORLD AREA -->
+
+    <div class="world">
+
+
+        <div class="tree">
+
+            <div class="tree-crown"></div>
+
+            <div class="tree-trunk"></div>
+
+        </div>
+
+
+
+        <div class="lantern">
+
+            <div class="lantern-glow"></div>
+
+            <div class="lantern-body"></div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- GROUND -->
+
+    <div class="ground">
+
+        <div class="grass"></div>
+
+
+        <div class="rocks">
+
+            <div class="rock"></div>
+            <div class="rock"></div>
+            <div class="rock"></div>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- TITLE MENU -->
+
+    <section class="menu">
+
 
         <h1>
             The Last<br>
             Candle
         </h1>
 
+
+
         <nav>
 
-            <button id="play">
+
+            <button class="active">
+
+                <span>✦</span>
                 follow the light
+
             </button>
 
-            <button>
-                end journey
-            </button>
+
 
             <button>
+
+                <span>✦</span>
                 sanctuary
+
             </button>
+
+
+
+            <button>
+
+                <span>✦</span>
+                end journey
+
+            </button>
+
 
         </nav>
 
-    </div>
+
+    </section>
+
+
+
 
 </div>
 
-<script src="title.js"></script>
+
+
+<script src="game.js"></script>
+
 
 </body>
 
