@@ -381,3 +381,270 @@ button.active span {
 opacity:1;
 
 }
+/* ===================================
+   GIANT TREE
+=================================== */
+
+
+.world {
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:5;
+
+    pointer-events:none;
+
+}
+
+
+
+.tree {
+
+    position:absolute;
+
+    right:8%;
+
+    bottom:17%;
+
+    width:520px;
+
+    height:650px;
+
+}
+
+
+
+
+/* trunk */
+
+
+.tree-trunk {
+
+    position:absolute;
+
+    bottom:0;
+
+    left:48%;
+
+
+    width:90px;
+
+    height:360px;
+
+
+    background:
+
+    linear-gradient(
+
+    90deg,
+
+    #425b89,
+
+    #9bb9e8,
+
+    #526d9f
+
+    );
+
+
+    border-radius:
+
+    45% 45% 10% 10%;
+
+
+    transform:
+
+    rotate(-3deg);
+
+
+    box-shadow:
+
+    0 0 30px rgba(160,200,255,.25);
+
+
+}
+
+
+
+.tree-trunk::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:180px;
+
+    height:50px;
+
+
+    left:-70px;
+
+    bottom:40px;
+
+
+    background:#526d9f;
+
+
+    border-radius:50%;
+
+
+    transform:rotate(-20deg);
+
+
+}
+
+
+
+
+
+
+/* leaf crown */
+
+
+.tree-crown {
+
+
+    position:absolute;
+
+
+    top:0;
+
+    left:0;
+
+
+    width:520px;
+
+    height:420px;
+
+
+    animation:
+
+    shimmer 6s infinite alternate;
+
+
+}
+
+
+
+
+.tree-crown::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:240px;
+
+    height:240px;
+
+
+    left:130px;
+
+    top:90px;
+
+
+    border-radius:50%;
+
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    #d7ebff,
+
+    #a9c6ff 45%,
+
+    #7f9fe6 80%
+
+    );
+
+
+    box-shadow:
+
+
+    -120px 70px 0 #9bb8ef,
+
+    120px 60px 0 #8daae8,
+
+    -80px -20px 0 #bcd5ff,
+
+    90px -40px 0 #d7ebff;
+
+
+}
+
+
+
+
+
+.tree-crown::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    width:130px;
+
+    height:130px;
+
+
+    right:30px;
+
+    top:140px;
+
+
+    border-radius:50%;
+
+
+    background:#8aa9e8;
+
+
+    box-shadow:
+
+    0 0 40px rgba(220,240,255,.4);
+
+
+}
+
+
+
+
+@keyframes shimmer {
+
+
+from {
+
+filter:
+
+brightness(.95);
+
+transform:translateY(0);
+
+}
+
+
+to {
+
+filter:
+
+brightness(1.12);
+
+transform:translateY(-4px);
+
+}
+
+
+}
