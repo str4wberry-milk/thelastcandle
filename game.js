@@ -26,6 +26,109 @@ if(hasVisited){
 
 }
 
+// ===================================
+// MENU BUTTONS
+// ===================================
+
+
+const buttons = document.querySelectorAll("nav button");
+
+const screen = document.querySelector("#title-screen");
+
+
+
+
+// FOLLOW THE LIGHT
+
+buttons[0].addEventListener("click",()=>{
+
+
+    console.log("Beginning journey...");
+
+
+    // later:
+    // start game loading screen here
+
+
+});
+
+
+
+
+
+// SANCTUARY
+
+buttons[1].addEventListener("click",()=>{
+
+
+    console.log("Entering sanctuary...");
+
+
+    // later:
+    // open sanctuary area
+
+
+});
+
+
+
+
+
+
+
+// END JOURNEY
+
+buttons[2].addEventListener("click",()=>{
+
+
+    // remember the traveler
+
+    localStorage.setItem(
+        "lastCandleVisited",
+        "true"
+    );
+
+
+
+    // begin ending effect
+
+
+    screen.classList.add(
+        "fade-light"
+    );
+
+
+
+    setTimeout(()=>{
+
+
+        console.log(
+            "The journey has ended."
+        );
+
+
+        // later:
+        // show ending scene
+
+
+    },2500);
+
+  
+    buttons[2].addEventListener("click",()=>{
+
+
+    localStorage.setItem(
+        "lastCandleVisited",
+        "true"
+    );
+
+
+});
+
+
+
+});
+
 const followButton =
 document.querySelector(".selected");
 
