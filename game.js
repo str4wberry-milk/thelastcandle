@@ -44,6 +44,223 @@ function unlockSecret(name){
 
 
 }
+
+
+
+// ===================================
+// FORGOTTEN CANDLE SECRET
+// ===================================
+
+
+
+function checkForgottenCandle(){
+
+
+const lantern =
+localStorage.getItem(
+"lanternClicked"
+);
+
+
+
+const leaf =
+localStorage.getItem(
+"goldenLeaf"
+);
+
+
+
+
+if(
+lantern &&
+leaf &&
+!localStorage.getItem(
+"forgottenCandle"
+)
+
+){
+
+
+createForgottenCandle();
+
+
+}
+
+}
+
+
+
+
+
+function createForgottenCandle(){
+
+
+const candle =
+document.createElement("div");
+
+
+
+candle.className =
+"forgotten-candle";
+
+
+
+candle.innerHTML = `
+
+<div class="forgotten-flame"></div>
+
+<div class="forgotten-base"></div>
+
+`;
+
+
+
+document
+.querySelector(".world")
+.appendChild(candle);
+
+
+
+unlockSecret(
+"forgottenCandle"
+);
+
+
+
+showMessage(
+"There was another flame."
+);
+
+
+}
+
+
+
+
+setInterval(
+checkForgottenCandle,
+3000
+);
+if(
+localStorage.getItem(
+"forgottenCandle"
+)
+){
+
+createForgottenCandle();
+
+}
+
+// ===================================
+// GOLDEN LEAF EVENT
+// ===================================
+
+
+
+if(
+localStorage.getItem("goldenLeaf")
+){
+
+
+document.body.classList.add(
+"golden-found"
+);
+
+
+}
+
+function createGoldenLeaf(){
+
+
+if(
+localStorage.getItem("goldenLeaf")
+){
+
+return;
+
+}
+
+
+
+
+const leaf =
+document.createElement("div");
+
+
+
+leaf.className =
+"golden-leaf";
+
+
+leaf.innerHTML =
+"🍂";
+
+
+
+leaf.style.left =
+(50 + Math.random()*30)
++ "%";
+
+
+
+document
+.querySelector(".world")
+.appendChild(leaf);
+
+
+
+
+
+leaf.addEventListener(
+"click",
+()=>{
+
+
+unlockSecret(
+"goldenLeaf"
+);
+
+
+
+document.body.classList.add(
+"golden-found"
+);
+
+
+
+showMessage(
+"A small light found you."
+);
+
+
+
+leaf.remove();
+
+
+});
+
+
+}
+
+
+
+
+// rare appearance
+
+
+setInterval(()=>{
+
+
+if(Math.random() > .6){
+
+
+createGoldenLeaf();
+
+
+}
+
+
+},15000);
 // ===================================
 // RETURNING TRAVELER SYSTEM
 // ===================================
