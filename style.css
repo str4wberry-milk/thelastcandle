@@ -649,65 +649,42 @@ transform:translateY(-4px);
 
 }
 /* ===================================
-   STONE LANTERN
+   TREE DETAIL PASS
 =================================== */
 
 
-.lantern {
+/* extra branches */
 
+.tree::after {
 
-position:absolute;
-
-
-right:22%;
-
-bottom:22%;
-
-
-width:70px;
-
-height:130px;
-
-
-}
-
-
-
-.lantern-glow {
-
+content:"";
 
 position:absolute;
 
+left:230px;
 
-top:-50px;
-
-left:-45px;
-
-
-width:160px;
-
-height:160px;
+top:250px;
 
 
-border-radius:50%;
+width:220px;
+
+height:35px;
 
 
-background:
-
-radial-gradient(
-
-circle,
-
-rgba(255,242,200,.5),
-
-transparent 70%
-
-);
+background:#6f88bd;
 
 
-animation:
+border-radius:50px;
 
-lanternPulse 4s infinite alternate;
+
+transform:rotate(25deg);
+
+
+box-shadow:
+
+-100px -90px 0 -8px #8faee8,
+
+120px -120px 0 -10px #a8c4f3;
 
 
 }
@@ -715,51 +692,38 @@ lanternPulse 4s infinite alternate;
 
 
 
-.lantern-body {
+/* bark texture */
 
 
-position:absolute;
-
-
-bottom:0;
-
-
-left:15px;
-
-
-width:40px;
-
-height:80px;
+.tree-trunk {
 
 
 background:
+
 
 linear-gradient(
 
 90deg,
 
-#6578a8,
+#526b9b 0%,
 
-#c0d5ff,
+#b5cdf5 30%,
 
-#6578a8
+#7189ba 55%,
+
+#d3e4ff 70%,
+
+#526b9b 100%
 
 );
-
-
-border-radius:8px;
-
-
-box-shadow:
-
-0 0 20px rgba(255,220,150,.5);
 
 
 }
 
 
 
-.lantern-body::before {
+
+.tree-trunk::after {
 
 
 content:"";
@@ -768,24 +732,26 @@ content:"";
 position:absolute;
 
 
-top:15px;
+inset:20px;
 
 
-left:8px;
+background:
 
 
-width:24px;
+repeating-linear-gradient(
 
-height:35px;
+90deg,
+
+transparent,
+
+transparent 12px,
+
+rgba(60,90,140,.25) 14px
+
+);
 
 
-background:#fff2c8;
-
-
-box-shadow:
-
-
-0 0 25px #fff2c8;
+border-radius:40px;
 
 
 }
@@ -793,26 +759,625 @@ box-shadow:
 
 
 
-@keyframes lanternPulse {
+
+/* leaf clusters */
+
+
+.tree-crown {
+
+
+filter:drop-shadow(
+
+0 0 25px rgba(220,240,255,.25)
+
+);
+
+
+}
+
+
+
+
+.tree-crown .leaf {
+
+
+width:25px;
+
+height:25px;
+
+
+background:
+
+radial-gradient(
+
+circle,
+
+#f4f8ff,
+
+#a9c6ff
+
+);
+
+
+}
+
+
+
+
+.leaf-one {
+
+
+animation:
+
+leafSparkle 4s infinite alternate;
+
+
+}
+
+
+.leaf-two {
+
+
+animation:
+
+leafSparkle 5s infinite alternate-reverse;
+
+
+}
+
+
+.leaf-three {
+
+
+animation:
+
+leafSparkle 6s infinite alternate;
+
+
+}
+
+
+
+@keyframes leafSparkle {
 
 
 from {
 
-opacity:.55;
+filter:brightness(.8);
 
-transform:scale(.95);
+transform:scale(1);
 
 }
 
 
 to {
 
-opacity:.9;
 
-transform:scale(1.05);
+filter:brightness(1.3);
+
+transform:scale(1.15);
+
 
 }
 
+
+}
+
+
+
+
+
+
+/* hanging vines */
+
+
+.tree-crown::after {
+
+
+content:"";
+
+
+position:absolute;
+
+
+right:80px;
+
+
+bottom:-40px;
+
+
+width:12px;
+
+
+height:120px;
+
+
+background:#8ca8dc;
+
+
+border-radius:20px;
+
+
+box-shadow:
+
+
+-80px 20px 0 -3px #9bb7ec;
+
+
+}
+/* ===================================
+   LANTERN DETAIL PASS
+=================================== */
+
+
+
+.lantern {
+
+
+animation:
+
+lanternSwing 5s ease-in-out infinite;
+
+
+transform-origin:top center;
+
+
+}
+
+
+
+@keyframes lanternSwing {
+
+
+0%,100%{
+
+transform:rotate(-2deg);
+
+}
+
+
+50%{
+
+transform:rotate(2deg);
+
+}
+
+
+}
+
+
+
+
+
+
+/* hanging chain */
+
+
+.lantern::before {
+
+
+content:"";
+
+
+position:absolute;
+
+
+top:-80px;
+
+
+left:42px;
+
+
+width:5px;
+
+
+height:80px;
+
+
+background:#b7cbed;
+
+
+box-shadow:
+
+
+0 0 8px rgba(255,255,255,.5);
+
+
+}
+
+
+
+
+
+/* roof detail */
+
+
+.lantern-roof {
+
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#6078aa,
+
+#d8e8ff,
+
+#6078aa
+
+);
+
+
+}
+
+
+
+
+
+/* glowing glass */
+
+
+.lantern-body {
+
+
+overflow:hidden;
+
+
+box-shadow:
+
+
+0 0 20px rgba(255,242,200,.5);
+
+
+}
+
+
+
+.lantern-light {
+
+
+animation:
+
+candleBreath 3s infinite alternate;
+
+
+}
+
+
+
+@keyframes candleBreath {
+
+
+from {
+
+opacity:.7;
+
+transform:scale(.9);
+
+
+}
+
+
+to {
+
+
+opacity:1;
+
+transform:scale(1.1);
+
+
+}
+
+
+}
+
+
+
+
+
+/* stone pedestal */
+
+
+.lantern-base {
+
+
+height:25px;
+
+
+background:
+
+
+linear-gradient(
+
+90deg,
+
+#566e9f,
+
+#c2d8ff,
+
+#566e9f
+
+);
+
+
+box-shadow:
+
+
+0 10px 20px rgba(0,0,0,.25);
+
+
+}
+/* ===================================
+   LANTERN LIGHT SPILL
+=================================== */
+
+
+.lantern::after {
+
+    content:"";
+
+    position:absolute;
+
+
+    left:50%;
+
+    bottom:-115px;
+
+
+    transform:translateX(-50%);
+
+
+
+    width:300px;
+
+    height:140px;
+
+
+
+    background:
+
+
+    radial-gradient(
+
+    ellipse,
+
+
+    rgba(255,242,200,.45) 0%,
+
+    rgba(255,220,150,.25) 35%,
+
+    rgba(255,220,150,.08) 55%,
+
+    transparent 75%
+
+    );
+
+
+
+    filter:blur(8px);
+
+
+    z-index:-1;
+
+
+    animation:
+
+    lightPool 3s infinite alternate;
+
+
+}
+
+
+
+@keyframes lightPool {
+
+
+from {
+
+
+    opacity:.65;
+
+    transform:
+
+    translateX(-50%)
+
+    scale(.95);
+
+
+}
+
+
+to {
+
+
+    opacity:1;
+
+    transform:
+
+    translateX(-50%)
+
+    scale(1.08);
+
+
+}
+
+
+}
+/* warm centre reflection */
+
+
+.lantern-light::after {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    inset:-20px;
+
+
+    background:
+
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,245,190,.7),
+
+    transparent 65%
+
+    );
+
+
+    animation:
+
+    flameGlow 2s infinite alternate;
+
+
+}
+
+
+
+@keyframes flameGlow {
+
+
+from {
+
+opacity:.6;
+
+}
+
+
+to {
+
+opacity:1;
+
+}
+
+
+}
+/* lantern reflection on ground */
+
+
+.ground {
+
+
+background:
+
+
+linear-gradient(
+
+180deg,
+
+transparent,
+
+rgba(90,120,185,.35)
+
+),
+
+radial-gradient(
+
+ellipse at 72% 35%,
+
+rgba(255,225,160,.18),
+
+transparent 28%
+
+),
+
+linear-gradient(
+
+0deg,
+
+#809bd0,
+
+#b7cef5
+
+);
+
+
+
+}
+/* ===================================
+   LANTERN STATES
+=================================== */
+
+
+.lantern-glow,
+.lantern-light,
+.lantern::after {
+
+    transition:2s ease;
+
+}
+
+
+/* brighter light */
+
+body.light-bright .lantern-glow {
+
+    transform:scale(1.45);
+
+    opacity:1;
+
+}
+
+
+body.light-bright .lantern-light {
+
+    filter:
+    brightness(1.5);
+
+}
+
+
+
+body.light-bright .lantern::after {
+
+    transform:
+    translateX(-50%)
+    scale(1.4);
+
+    opacity:1;
+
+}
+
+
+
+
+/* dimmed light */
+
+body.light-dark .lantern-glow {
+
+    transform:scale(.55);
+
+    opacity:.25;
+
+}
+
+
+
+body.light-dark .lantern-light {
+
+    filter:
+    brightness(.45);
+
+}
+
+
+
+body.light-dark .lantern::after {
+
+    transform:
+    translateX(-50%)
+    scale(.6);
+
+    opacity:.2;
 
 }
 
