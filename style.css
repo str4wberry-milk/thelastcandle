@@ -1,0 +1,383 @@
+* {
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+
+
+:root {
+
+
+--sky-top:#09152d;
+--sky-mid:#1b3368;
+--sky-bottom:#5676b8;
+
+
+--moon:#edf6ff;
+
+--glow:#fff2c8;
+
+
+}
+
+
+
+body {
+
+overflow:hidden;
+
+background:#09152d;
+
+}
+
+
+
+
+#title-screen {
+
+
+height:100vh;
+width:100vw;
+
+position:relative;
+
+overflow:hidden;
+
+color:white;
+
+font-family:"Baloo 2", sans-serif;
+
+
+}
+
+
+
+
+/* SKY */
+
+
+.sky {
+
+
+position:absolute;
+
+inset:0;
+
+
+background:
+
+
+radial-gradient(
+
+circle at 70% 20%,
+
+rgba(190,220,255,.18),
+
+transparent 30%
+
+),
+
+
+linear-gradient(
+
+180deg,
+
+var(--sky-top),
+
+var(--sky-mid) 60%,
+
+var(--sky-bottom)
+
+);
+
+
+}
+
+
+
+
+.moon {
+
+
+position:absolute;
+
+right:18%;
+
+top:13%;
+
+
+width:130px;
+
+height:130px;
+
+
+border-radius:50%;
+
+
+background:var(--moon);
+
+
+box-shadow:
+
+
+0 0 40px rgba(237,246,255,.8),
+
+0 0 120px rgba(237,246,255,.35);
+
+
+}
+
+
+
+
+/* STARS */
+
+
+.stars span {
+
+
+position:absolute;
+
+
+font-size:25px;
+
+
+opacity:.75;
+
+
+animation:twinkle 3s infinite alternate;
+
+
+}
+
+
+
+.stars span:nth-child(1){
+
+top:15%;
+left:15%;
+
+}
+
+
+.stars span:nth-child(2){
+
+top:25%;
+left:40%;
+
+}
+
+
+.stars span:nth-child(3){
+
+top:10%;
+left:60%;
+
+}
+
+
+.stars span:nth-child(4){
+
+top:32%;
+left:80%;
+
+}
+
+
+.stars span:nth-child(5){
+
+top:20%;
+left:88%;
+
+}
+
+
+.stars span:nth-child(6){
+
+top:45%;
+left:55%;
+
+}
+
+
+
+
+@keyframes twinkle {
+
+
+from {
+
+opacity:.3;
+
+}
+
+
+to {
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+
+
+/* MENU */
+
+
+.menu {
+
+
+position:absolute;
+
+
+left:10%;
+
+top:27%;
+
+
+z-index:20;
+
+
+}
+
+
+
+
+h1 {
+
+
+font-family:"Cormorant Garamond",serif;
+
+
+font-size:100px;
+
+
+font-weight:500;
+
+
+line-height:.8;
+
+
+letter-spacing:5px;
+
+
+text-shadow:
+
+
+0 0 20px rgba(255,255,255,.2);
+
+
+}
+
+
+
+
+nav {
+
+
+margin-top:70px;
+
+
+display:flex;
+
+flex-direction:column;
+
+gap:28px;
+
+
+}
+
+
+
+
+button {
+
+
+border:none;
+
+background:none;
+
+
+font-family:"Baloo 2";
+
+
+font-size:27px;
+
+
+color:white;
+
+
+cursor:pointer;
+
+
+text-align:left;
+
+
+opacity:.7;
+
+
+transition:.35s;
+
+
+}
+
+
+
+button span {
+
+
+opacity:0;
+
+display:inline-block;
+
+margin-right:10px;
+
+
+transition:.35s;
+
+
+}
+
+
+
+button:hover {
+
+
+transform:translateX(10px);
+
+
+opacity:1;
+
+
+text-shadow:
+
+
+0 0 15px var(--glow);
+
+
+}
+
+
+
+button:hover span {
+
+
+opacity:1;
+
+
+}
+
+
+
+button.active span {
+
+opacity:1;
+
+}
