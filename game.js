@@ -1,3 +1,31 @@
+// ===================================
+// RETURNING TRAVELER SYSTEM
+// ===================================
+
+
+const welcome =
+document.querySelector(".welcome-container");
+
+
+const hasVisited =
+localStorage.getItem("lastCandleVisited");
+
+
+
+if(hasVisited){
+
+
+    welcome.innerHTML =
+    "Welcome back, traveler.";
+
+
+    document.body.classList.add(
+        "returning"
+    );
+
+
+}
+
 const followButton =
 document.querySelector(".selected");
 
