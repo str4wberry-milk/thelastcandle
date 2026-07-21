@@ -648,3 +648,1872 @@ transform:translateY(-4px);
 
 
 }
+/* ===================================
+   STONE LANTERN
+=================================== */
+
+
+.lantern {
+
+
+position:absolute;
+
+
+right:22%;
+
+bottom:22%;
+
+
+width:70px;
+
+height:130px;
+
+
+}
+
+
+
+.lantern-glow {
+
+
+position:absolute;
+
+
+top:-50px;
+
+left:-45px;
+
+
+width:160px;
+
+height:160px;
+
+
+border-radius:50%;
+
+
+background:
+
+radial-gradient(
+
+circle,
+
+rgba(255,242,200,.5),
+
+transparent 70%
+
+);
+
+
+animation:
+
+lanternPulse 4s infinite alternate;
+
+
+}
+
+
+
+
+.lantern-body {
+
+
+position:absolute;
+
+
+bottom:0;
+
+
+left:15px;
+
+
+width:40px;
+
+height:80px;
+
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#6578a8,
+
+#c0d5ff,
+
+#6578a8
+
+);
+
+
+border-radius:8px;
+
+
+box-shadow:
+
+0 0 20px rgba(255,220,150,.5);
+
+
+}
+
+
+
+.lantern-body::before {
+
+
+content:"";
+
+
+position:absolute;
+
+
+top:15px;
+
+
+left:8px;
+
+
+width:24px;
+
+height:35px;
+
+
+background:#fff2c8;
+
+
+box-shadow:
+
+
+0 0 25px #fff2c8;
+
+
+}
+
+
+
+
+@keyframes lanternPulse {
+
+
+from {
+
+opacity:.55;
+
+transform:scale(.95);
+
+}
+
+
+to {
+
+opacity:.9;
+
+transform:scale(1.05);
+
+}
+
+
+}
+
+/* ===================================
+   GROUND
+=================================== */
+
+
+.ground {
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    height:28%;
+
+
+    z-index:8;
+
+
+    background:
+
+
+    linear-gradient(
+
+    180deg,
+
+    transparent,
+
+    rgba(80,110,180,.35)
+
+    );
+
+
+}
+
+
+
+
+/* soft grass field */
+
+
+.grass {
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+    background:
+
+
+    radial-gradient(
+
+    ellipse at center,
+
+    rgba(180,210,255,.35),
+
+    transparent 60%
+
+    );
+
+
+}
+
+
+
+
+/* grass blades */
+
+
+.grass::before {
+
+
+    content:"";
+
+
+    position:absolute;
+
+
+    bottom:0;
+
+
+    left:0;
+
+
+    width:100%;
+
+
+    height:90px;
+
+
+    background:
+
+
+    repeating-linear-gradient(
+
+    100deg,
+
+    rgba(170,200,245,.35) 0px,
+
+    rgba(170,200,245,.35) 3px,
+
+    transparent 4px,
+
+    transparent 12px
+
+    );
+
+
+    opacity:.7;
+
+
+}
+
+
+
+
+/* ===================================
+   ROCKS
+=================================== */
+
+
+.rocks {
+
+
+    position:absolute;
+
+
+    inset:0;
+
+
+}
+
+
+
+.rock {
+
+
+    position:absolute;
+
+
+    width:90px;
+
+    height:45px;
+
+
+    background:
+
+
+    linear-gradient(
+
+    140deg,
+
+    #a9bfe8,
+
+    #647eaf
+
+    );
+
+
+    border-radius:
+
+    60% 50% 45% 40%;
+
+
+    box-shadow:
+
+    0 15px 25px rgba(0,0,0,.15);
+
+
+}
+
+
+
+.rock:nth-child(1){
+
+
+    left:18%;
+
+    bottom:30px;
+
+    transform:rotate(-10deg);
+
+
+}
+
+
+
+.rock:nth-child(2){
+
+
+    right:35%;
+
+    bottom:55px;
+
+
+    width:70px;
+
+    height:35px;
+
+
+}
+
+
+
+.rock:nth-child(3){
+
+
+    right:12%;
+
+    bottom:25px;
+
+
+    width:110px;
+
+    height:50px;
+
+
+}
+/* ===================================
+   LITTLE FLOWERS
+=================================== */
+
+
+.ground::before {
+
+
+    content:"✦  ✧   ✦      ✧     ✦";
+
+
+    position:absolute;
+
+
+    bottom:70px;
+
+
+    left:25%;
+
+
+    color:#d5ddff;
+
+
+    font-size:25px;
+
+
+    letter-spacing:45px;
+
+
+    opacity:.7;
+
+
+}
+/* ===================================
+   TREE SYSTEM
+=================================== */
+
+
+.tree {
+
+    position:absolute;
+
+    right:7%;
+
+    bottom:18%;
+
+    width:560px;
+
+    height:700px;
+
+    z-index:6;
+
+    animation:treeBreathe 8s ease-in-out infinite alternate;
+
+}
+
+
+
+
+@keyframes treeBreathe {
+
+
+from {
+
+transform:translateY(0);
+
+}
+
+
+to {
+
+transform:translateY(-5px);
+
+}
+
+
+}
+
+
+
+
+
+/* TRUNK */
+
+
+.tree-trunk {
+
+
+position:absolute;
+
+
+bottom:0;
+
+left:47%;
+
+
+width:95px;
+
+height:390px;
+
+
+
+background:
+
+
+linear-gradient(
+
+90deg,
+
+#526b9b,
+
+#c2d7ff 45%,
+
+#7089ba
+
+);
+
+
+
+border-radius:
+
+50px 50px 20px 20px;
+
+
+
+transform:
+
+rotate(-4deg);
+
+
+
+box-shadow:
+
+
+0 0 35px rgba(180,220,255,.25);
+
+
+
+}
+
+
+
+
+
+/* roots */
+
+
+.tree-trunk::before {
+
+
+content:"";
+
+
+position:absolute;
+
+
+bottom:-10px;
+
+
+left:-130px;
+
+
+width:300px;
+
+
+height:70px;
+
+
+background:#718bc0;
+
+
+border-radius:50%;
+
+
+transform:rotate(-8deg);
+
+
+
+}
+
+
+
+
+.tree-trunk::after {
+
+
+content:"";
+
+
+position:absolute;
+
+
+bottom:30px;
+
+
+right:-120px;
+
+
+width:230px;
+
+
+height:60px;
+
+
+background:#7e99cf;
+
+
+border-radius:50%;
+
+
+transform:rotate(15deg);
+
+
+}
+
+
+
+
+
+
+
+/* branches */
+
+
+.tree::before {
+
+
+content:"";
+
+
+position:absolute;
+
+
+top:210px;
+
+
+left:170px;
+
+
+width:250px;
+
+
+height:35px;
+
+
+background:#7893c7;
+
+
+border-radius:40px;
+
+
+transform:rotate(-25deg);
+
+
+
+box-shadow:
+
+100px -80px 0 -5px #9bb7ec;
+
+
+}
+
+
+
+
+
+/* CANOPY */
+
+
+.tree-crown {
+
+
+position:absolute;
+
+
+top:0;
+
+left:0;
+
+
+width:560px;
+
+height:430px;
+
+
+
+}
+
+
+
+
+
+.tree-crown::before {
+
+
+content:"";
+
+
+position:absolute;
+
+
+
+width:260px;
+
+height:260px;
+
+
+left:150px;
+
+top:80px;
+
+
+border-radius:50%;
+
+
+
+background:
+
+
+radial-gradient(
+
+circle at 40% 30%,
+
+#edf6ff,
+
+#bfd8ff 35%,
+
+#91afe8 75%
+
+);
+
+
+
+box-shadow:
+
+
+-120px 80px 0 #a8c4f3,
+
+120px 70px 0 #91afe8,
+
+-80px -30px 0 #d7ebff,
+
+90px -40px 0 #c7ddff;
+
+
+}
+
+
+
+
+.tree-crown::after {
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:160px;
+
+height:160px;
+
+
+right:30px;
+
+top:150px;
+
+
+border-radius:50%;
+
+
+background:#7f9fe6;
+
+
+box-shadow:
+
+
+0 0 40px rgba(215,235,255,.5);
+
+
+}
+
+
+
+
+
+/* individual glowing leaves */
+
+
+.leaf {
+
+
+position:absolute;
+
+
+width:18px;
+
+height:18px;
+
+
+border-radius:50%;
+
+
+background:#edf6ff;
+
+
+box-shadow:
+
+0 0 15px #edf6ff;
+
+
+animation:leafGlow 5s infinite alternate;
+
+
+}
+
+
+
+
+.leaf-one {
+
+top:80px;
+
+left:170px;
+
+}
+
+
+
+.leaf-two {
+
+top:190px;
+
+right:130px;
+
+}
+
+
+
+.leaf-three {
+
+top:250px;
+
+left:100px;
+
+}
+
+
+
+@keyframes leafGlow {
+
+
+from {
+
+opacity:.5;
+
+}
+
+
+to {
+
+opacity:1;
+
+}
+
+
+}
+/* ===================================
+   LANTERN
+=================================== */
+
+
+.lantern {
+
+
+position:absolute;
+
+
+right:23%;
+
+
+bottom:25%;
+
+
+width:90px;
+
+
+height:160px;
+
+
+z-index:10;
+
+
+}
+
+
+
+
+
+.lantern-glow {
+
+
+position:absolute;
+
+
+top:-60px;
+
+
+left:-50px;
+
+
+width:190px;
+
+
+height:190px;
+
+
+border-radius:50%;
+
+
+background:
+
+
+radial-gradient(
+
+circle,
+
+rgba(255,242,200,.45),
+
+transparent 70%
+
+);
+
+
+animation:
+
+glowPulse 4s infinite alternate;
+
+
+filter:
+
+blur(10px);
+
+
+}
+
+
+}
+
+
+
+
+
+.lantern-roof {
+
+
+position:absolute;
+
+
+top:10px;
+
+
+left:18px;
+
+
+width:55px;
+
+
+height:20px;
+
+
+background:#8ea8d8;
+
+
+clip-path:polygon(50% 0,100% 100%,0 100%);
+
+
+}
+
+
+
+
+
+.lantern-body {
+
+
+position:absolute;
+
+
+top:30px;
+
+
+left:25px;
+
+
+width:45px;
+
+
+height:70px;
+
+
+background:
+
+
+linear-gradient(
+
+90deg,
+
+#667da9,
+
+#d4e3ff,
+
+#667da9
+
+);
+
+
+
+border-radius:8px;
+
+
+}
+
+
+
+
+.lantern-light {
+
+
+position:absolute;
+
+
+inset:12px;
+
+
+background:#fff2c8;
+
+
+box-shadow:
+
+0 0 30px #fff2c8;
+
+
+}
+
+
+
+
+
+.lantern-base {
+
+
+position:absolute;
+
+
+bottom:35px;
+
+
+left:15px;
+
+
+width:65px;
+
+
+height:15px;
+
+
+background:#718bc0;
+
+
+border-radius:50%;
+
+
+}
+
+
+
+
+@keyframes glowPulse {
+
+
+from {
+
+transform:scale(.9);
+
+opacity:.5;
+
+}
+
+
+to {
+
+transform:scale(1.1);
+
+opacity:1;
+
+}
+
+
+}
+/* ===================================
+   FOREST FLOOR
+=================================== */
+
+
+.ground {
+
+
+position:absolute;
+
+
+bottom:0;
+
+left:0;
+
+
+width:100%;
+
+
+height:30%;
+
+
+z-index:8;
+
+
+overflow:hidden;
+
+
+
+background:
+
+
+linear-gradient(
+
+180deg,
+
+transparent,
+
+rgba(90,120,185,.35)
+
+),
+
+linear-gradient(
+
+0deg,
+
+#809bd0,
+
+#b7cef5
+
+);
+
+
+
+}
+
+
+
+
+
+/* soft light over grass */
+
+
+.grass {
+
+
+position:absolute;
+
+
+inset:0;
+
+
+
+background:
+
+
+radial-gradient(
+
+ellipse at 60% 30%,
+
+rgba(220,240,255,.5),
+
+transparent 50%
+
+);
+
+
+
+}
+
+
+
+
+
+
+/* grass blades */
+
+
+.grass::before {
+
+
+content:"";
+
+
+position:absolute;
+
+
+bottom:0;
+
+
+left:0;
+
+
+width:100%;
+
+
+height:100px;
+
+
+
+background:
+
+
+repeating-linear-gradient(
+
+110deg,
+
+rgba(220,235,255,.45) 0px,
+
+rgba(220,235,255,.45) 3px,
+
+transparent 4px,
+
+transparent 15px
+
+);
+
+
+
+opacity:.7;
+
+
+
+}
+
+
+
+
+
+
+
+
+/* second grass layer */
+
+
+.grass::after {
+
+
+content:"";
+
+
+position:absolute;
+
+
+bottom:-20px;
+
+
+left:0;
+
+
+width:100%;
+
+
+height:80px;
+
+
+background:
+
+
+linear-gradient(
+
+transparent,
+
+rgba(70,100,160,.3)
+
+);
+
+
+
+}
+
+
+
+
+
+
+
+/* ===================================
+   PATH
+=================================== */
+
+
+.ground::before {
+
+
+content:"";
+
+
+position:absolute;
+
+
+bottom:-80px;
+
+
+left:48%;
+
+
+width:250px;
+
+
+height:300px;
+
+
+
+background:
+
+
+radial-gradient(
+
+ellipse,
+
+rgba(230,235,255,.5),
+
+transparent 70%
+
+);
+
+
+
+transform:
+
+rotate(-10deg);
+
+
+opacity:.7;
+
+
+}
+
+
+
+
+
+
+
+/* ===================================
+   FLOWERS
+=================================== */
+
+
+.flowers {
+
+
+position:absolute;
+
+
+bottom:65px;
+
+
+left:18%;
+
+
+font-size:25px;
+
+
+letter-spacing:45px;
+
+
+color:#e5edff;
+
+
+opacity:.8;
+
+
+animation:
+
+flowerFloat 5s infinite alternate;
+
+
+}
+
+
+
+
+@keyframes flowerFloat {
+
+
+from {
+
+transform:translateY(0);
+
+}
+
+
+to {
+
+transform:translateY(-5px);
+
+}
+
+
+}
+
+
+
+
+
+
+
+
+/* ===================================
+   ROCKS
+=================================== */
+
+
+.rock {
+
+
+position:absolute;
+
+
+
+background:
+
+
+linear-gradient(
+
+140deg,
+
+#d0def7,
+
+#7e96c5
+
+);
+
+
+
+border-radius:
+
+60% 45% 50% 35%;
+
+
+
+box-shadow:
+
+
+0 15px 25px rgba(40,60,110,.2);
+
+
+}
+
+
+
+
+
+
+.rock-one {
+
+
+width:100px;
+
+height:50px;
+
+
+left:20%;
+
+
+bottom:40px;
+
+
+transform:rotate(-10deg);
+
+
+}
+
+
+
+
+
+.rock-two {
+
+
+width:70px;
+
+height:35px;
+
+
+right:35%;
+
+
+bottom:65px;
+
+
+}
+
+
+
+
+
+.rock-three {
+
+
+width:130px;
+
+height:60px;
+
+
+right:10%;
+
+
+bottom:25px;
+
+
+}
+
+/* ===================================
+   FOG
+=================================== */
+
+
+.mist {
+
+
+position:absolute;
+
+
+inset:0;
+
+
+z-index:14;
+
+
+pointer-events:none;
+
+
+
+background:
+
+
+radial-gradient(
+
+ellipse at 40% 70%,
+
+rgba(220,235,255,.18),
+
+transparent 45%
+
+),
+
+
+radial-gradient(
+
+ellipse at 80% 40%,
+
+rgba(170,200,255,.12),
+
+transparent 40%
+
+);
+
+
+
+animation:
+
+fogDrift 18s infinite alternate;
+
+
+}
+
+
+
+
+@keyframes fogDrift {
+
+
+from {
+
+transform:translateX(-40px);
+
+}
+
+
+to {
+
+transform:translateX(40px);
+
+}
+
+
+}
+/* ===================================
+   PARTICLES
+=================================== */
+
+
+.particles {
+
+
+position:absolute;
+
+
+inset:0;
+
+
+z-index:20;
+
+
+pointer-events:none;
+
+
+overflow:hidden;
+
+
+}
+
+
+
+
+
+.particle {
+
+
+position:absolute;
+
+
+width:5px;
+
+
+height:5px;
+
+
+border-radius:50%;
+
+
+
+background:#fff2c8;
+
+
+
+box-shadow:
+
+
+0 0 12px #fff2c8;
+
+
+animation:
+
+floatParticle 10s linear infinite;
+
+
+
+opacity:.7;
+
+
+}
+
+
+
+
+
+@keyframes floatParticle {
+
+
+0% {
+
+
+transform:
+
+translateY(100vh)
+
+translateX(0);
+
+
+opacity:0;
+
+
+}
+
+
+
+20% {
+
+
+opacity:1;
+
+
+}
+
+
+
+100% {
+
+
+transform:
+
+translateY(-20vh)
+
+translateX(80px);
+
+
+
+opacity:0;
+
+
+}
+
+
+}
+.falling-leaf {
+
+
+position:absolute;
+
+
+z-index:13;
+
+
+color:#d7ebff;
+
+
+font-size:18px;
+
+
+animation:
+
+leafFall 9s linear infinite;
+
+
+}
+
+
+
+
+@keyframes leafFall {
+
+
+from {
+
+
+transform:
+
+translateY(-50px)
+
+rotate(0deg);
+
+
+opacity:.8;
+
+
+}
+
+
+to {
+
+
+transform:
+
+translateY(100vh)
+
+rotate(260deg);
+
+
+opacity:0;
+
+
+}
+
+
+}
+.lantern-glow {
+
+
+filter:
+
+blur(10px);
+
+
+}
+/* ===================================
+   TRANSITION
+=================================== */
+
+
+.fade-light {
+
+
+animation:
+
+lightFade 2.5s forwards;
+
+
+}
+
+
+
+@keyframes lightFade {
+
+
+0% {
+
+
+filter:
+
+brightness(1);
+
+
+}
+
+
+
+50% {
+
+
+filter:
+
+brightness(2);
+
+
+}
+
+
+
+100% {
+
+
+filter:
+
+brightness(0);
+
+
+}
+
+
+}
+.world {
+
+
+animation:
+
+worldBreath 12s infinite alternate;
+
+
+}
+
+
+
+@keyframes worldBreath {
+
+
+from {
+
+transform:scale(1);
+
+}
+
+
+
+to {
+
+
+transform:scale(1.015);
+
+
+}
+
+
+}
