@@ -3182,3 +3182,181 @@ body.returning .tree-crown {
 
 
 }
+
+.secret-message {
+
+
+position:absolute;
+
+
+bottom:20%;
+
+
+left:50%;
+
+
+transform:
+translateX(-50%);
+
+
+
+font-family:
+"Cormorant Garamond",
+serif;
+
+
+font-size:30px;
+
+
+color:#edf6ff;
+
+
+opacity:.9;
+
+
+animation:
+
+secretFade 4s forwards;
+
+
+z-index:50;
+
+
+}
+
+
+
+
+@keyframes secretFade {
+
+
+0% {
+
+opacity:0;
+
+}
+
+
+20% {
+
+opacity:1;
+
+}
+
+
+80% {
+
+opacity:1;
+
+}
+
+
+100% {
+
+opacity:0;
+
+}
+
+
+}
+
+/* ===================================
+   GOLDEN LEAF SECRET
+=================================== */
+
+
+.golden-leaf {
+
+
+position:absolute;
+
+
+z-index:25;
+
+
+font-size:22px;
+
+
+cursor:pointer;
+
+
+filter:
+
+drop-shadow(
+
+0 0 12px #fff2c8
+
+);
+
+
+
+animation:
+
+goldLeafFall 8s linear forwards;
+
+
+}
+
+
+
+
+@keyframes goldLeafFall {
+
+
+from {
+
+
+transform:
+
+translateY(-50px)
+
+rotate(0deg);
+
+
+opacity:1;
+
+
+}
+
+
+
+to {
+
+
+transform:
+
+translateY(80vh)
+
+rotate(360deg);
+
+
+opacity:.2;
+
+
+}
+
+
+}
+
+
+
+
+body.golden-found .lantern-light {
+
+
+filter:
+
+brightness(1.25);
+
+
+}
+
+
+
+body.golden-found .lantern-glow {
+
+
+opacity:1.3;
+
+
+}
