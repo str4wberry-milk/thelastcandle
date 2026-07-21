@@ -1,4 +1,50 @@
 // ===================================
+// EASTER EGG MEMORY SYSTEM
+// ===================================
+
+
+const secrets = {
+
+
+    lanternClicked: 
+    localStorage.getItem("lanternClicked"),
+
+
+    treeTouched:
+    localStorage.getItem("treeTouched"),
+
+
+    goldenLeaf:
+    localStorage.getItem("goldenLeaf"),
+
+
+    forgottenCandle:
+    localStorage.getItem("forgottenCandle")
+
+
+};
+
+
+
+
+
+function unlockSecret(name){
+
+
+    localStorage.setItem(
+        name,
+        "true"
+    );
+
+
+    console.log(
+        "Secret unlocked:",
+        name
+    );
+
+
+}
+// ===================================
 // RETURNING TRAVELER SYSTEM
 // ===================================
 
@@ -209,3 +255,125 @@ buttons.forEach(button=>{
     });
 
 });
+
+const lantern =
+document.querySelector(".lantern");
+
+
+
+let lanternClicks = 0;
+
+
+
+lantern.addEventListener(
+"click",
+()=>{
+
+
+    lanternClicks++;
+
+
+
+    if(lanternClicks >= 7){
+
+
+        unlockSecret(
+        "lanternClicked"
+        );
+
+
+
+        showMessage(
+        "I was waiting."
+        );
+
+
+    }
+
+
+});
+
+const tree =
+document.querySelector(".tree");
+
+
+let treeClicks = 0;
+
+
+
+tree.addEventListener(
+"click",
+()=>{
+
+
+treeClicks++;
+
+
+
+if(treeClicks === 1){
+
+
+showMessage(
+"The tree is silent."
+);
+
+
+}
+
+
+
+if(treeClicks === 3){
+
+
+unlockSecret(
+"treeTouched"
+);
+
+
+
+showMessage(
+"It remembers your footsteps."
+);
+
+
+
+}
+
+
+
+});
+
+function showMessage(text){
+
+
+const message =
+document.createElement("div");
+
+
+
+message.className =
+"secret-message";
+
+
+
+message.innerText =
+text;
+
+
+
+document.body.appendChild(
+message
+);
+
+
+
+setTimeout(()=>{
+
+
+message.remove();
+
+
+},4000);
+
+
+}
